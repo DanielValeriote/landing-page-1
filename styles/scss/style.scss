@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
 
+$bg-color: #1e1e1e;
+$main-white: #efefef;
+$main-color: #6C63FF;
 
 * {
   margin: 0;
@@ -8,12 +11,125 @@
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: $bg-color;
   width: 100%;
+  padding: 0px 50px;
   min-height: 100vh;
   font-family: "Outfit";
+  color: $main-white;
+  margin: 0 auto;
 }
 
+
 header {
-  height: 100px;
+  display: flex;
+  flex-direction: row;
+  min-height: 120px;
+  width: 100%;
+  border-bottom: 1px solid rgba($main-white, .5);
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  & h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $main-white;
+  }
+  .navbar-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 50px;
+    & li a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: $main-white;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 100px 0px;
+  gap: 25px;
+}
+
+article{
+  min-width: 300px;
+  max-width: 50%;
+  line-height: 24px;
+  font-size: 1.1rem;
+  & h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  .purple {
+    color: $main-color;
+  }
+}
+
+aside img{
+  max-width: 100%;
+}
+
+footer {
+  padding-top: 50px;
+  padding-bottom: 25px;
+  text-align: center;
+  section {
+    margin-bottom: 50px;
+  }
+  .contact-icons {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    gap: 25px;
+  }
+  & svg {
+    fill: white;
+  }
+  h3 {
+    font-weight: 25px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 14px;
+  }
+  body {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  html {
+    font-size: 12px;
+  }
+  header {
+    padding: 10px 50px;
+    flex-direction: column;
+    gap: 25px;
+    h1 {
+      text-align: center;
+    }
+  }
+  body {
+    padding: 0;
+  }
+  main {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  article {
+    max-width: 85%;
+  }
+  aside img {
+    max-width: 85%;
+  }
 }
